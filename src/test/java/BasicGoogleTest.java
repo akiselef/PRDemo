@@ -13,4 +13,11 @@ public class BasicGoogleTest {
         $(byName("btnK")).click();
         $("#search").shouldHave(text("selenide.org"));
     }
+    
+    @Test
+    public void searchInYandexTest() {
+        open("https://yandex.ru/");
+        $("#text").val("Selenide").pressEnter();
+        $(".main__content").shouldHave(text("selenide.org"));
+    }
 }
